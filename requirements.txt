@@ -1,0 +1,8 @@
+Flask
+Keras
+numpy
+matplotlib
+scipy
+scikit-learn
+tensorflow
+jupyter
