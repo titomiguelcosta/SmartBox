@@ -2,6 +2,7 @@ Flask
 Keras
 numpy
 matplotlib
+pandas
 scipy
 scikit-learn
 tensorflow

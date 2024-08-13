@@ -5,8 +5,8 @@ build:
 	docker build -f Dockerfile.jupyter -t smart-box-jupyter .
 
 run:
-	docker run -p 8880:8880 -v .:/app smart-box-flask
-	docker run -p 8888:8888 -v .:/app smart-box-jupyter
+	docker run --name smart-box-flask -p 8880:8880 -v .:/app smart-box-flask  &
+	docker run --name smart-box-jupyter -p 8888:8888 -v .:/app smart-box-jupyter &
 
 clean:
 	@docker rm -f $$(docker ps -qa) || true
