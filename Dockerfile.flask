@@ -4,6 +4,7 @@ WORKDIR /app
 
 ADD . /app
 
+RUN apt update && apt install -y libhdf5-serial-dev
 RUN pip install -r requirements.txt  --root-user-action=ignore
 
 ENV FLASK_APP app.py
