@@ -13,11 +13,11 @@ Not all models require it, but it is recommended that all features are numeric a
 
 ```
 from sklearn.preprocessing import StandardScaler
- sc = StandardScaler
- sc.fit(X_train)
- X_train_std = sc.transform(X_train)
- X_test_std = sc.transform(X_test)
- ```
+sc = StandardScaler
+sc.fit(X_train)
+X_train_std = sc.transform(X_train)
+X_test_std = sc.transform(X_test)
+```
 
 ## Clean up data
 
@@ -30,6 +30,12 @@ df
 ```
 
 ### Drop data
+
+Drop one column
+
+```
+data.drop('id', axis='columns', inplace=True)
+```
 
 Check how many empty values there are per column.
 

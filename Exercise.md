@@ -41,7 +41,27 @@ LIMIT 1000;
 
 ## Preprocessing
 
-* Convert time and role to numeric values
+### Drop id column
+
+```
+data.drop('id', axis='columns', inplace=True)
+```
+
+### Convert time and role to numeric values
+
+If we have a limited number of values
+
+```
+data['time_of_day'].replace(to_replace=['morning', 'afternoon', 'evening'], value=[0, 1, 2], inplace=True)
+```
+
+Otherwise, we can use LabelEncoder
+
+```
+from sklearn.preprocessing import LabelEncoder
+labelencoder= LabelEncoder()
+data['role'] = labelencoder.fit_transform(data['role'])
+```
 
 ## Train
 
